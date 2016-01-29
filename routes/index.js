@@ -4,8 +4,9 @@ var router = express.Router();
 var authMiddleware = require('../config/auth');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: "Ben's App" });
+router.get('/', authMiddleware, function(req, res, next) {
+  console.log("User: ", req.user);
+  res.render('index', { title: "Ben's App", user: req.user});
 });
 
 router.get('/login', function(req, res, next) {

@@ -14,4 +14,10 @@ router.post('/', function(req, res, next) {
   // add pokemon to user
 });
 
+
+
+
+
+
+
 module.exports = router;

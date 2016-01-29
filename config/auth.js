@@ -9,7 +9,7 @@ var authMiddleware = function(req, res, next) {
     var payload = jwt.decode(req.cookies.mytoken, JWT_SECRET);
   } catch(err) {
     // return res.status(401).send('Authentication failed.');
-    return res.status(401).render('noauth');
+    // return res.status(401).render('noauth');
   }
 
   req.user = payload;

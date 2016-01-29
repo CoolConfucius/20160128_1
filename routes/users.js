@@ -30,6 +30,7 @@ router.post('/login', function(req, res, next) {
 });
 
 router.get('/profile', authMiddleware, function(req, res) {
+  if (!req.user) { res.render('noauth'); return; };
   //// logged in,   req.user
   User.findById(req.user._id, function(err, user) {
     // res.send(user);
